@@ -6,14 +6,15 @@
   "main": "dist-electron/main.js",
   "scripts": {
     "dev": "vite",
-    "dev:electron": "electron .",
+    "dev:electron": "tsc -b && tsc -p src/electron/tsconfig.json && vite build && electron .",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "transpile-electron": "tsc -p src/electron/tsconfig.json",
     "dist:mac": "tsc -p src/electron/tsconfig.json && tsc -b && vite build && electron-builder --mac --arm64",
     "dist:win": "tsc -p src/electron/tsconfig.json && tsc -b && vite build && electron-builder --win --x64",
-    "dist:linux": "tsc -p src/electron/tsconfig.json && tsc -b && vite build && electron-builder --linux --x64"
+    "dist:linux": "tsc -p src/electron/tsconfig.json && tsc -b && vite build && electron-builder --linux --x64",
+    "postinstall": "node node_modules/electron/install.js"
   },
   "dependencies": {
     "react": "^19.1.0",
