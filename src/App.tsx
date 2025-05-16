@@ -28,6 +28,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <audio controls>
+        <source src="../public/file_example_MP3_1MG.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
     </>
   )
 }
